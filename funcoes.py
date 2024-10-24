@@ -1,22 +1,30 @@
 # exercicio 1 
 def define_posicoes(linha,coluna,orientacao,tamanho):
-    lista_final = []
+    posicao = []
     if orientacao == 'vertical':
         while tamanho != 0:
-            lista_final.append([0,coluna]) 
+            posicao.append([0,coluna]) 
             tamanho -= 1
         i = 0
-        while i < len(lista_final):
-            lista_final[i][0] = linha
+        while i < len(posicao):
+            posicao[i][0] = linha
             linha += 1
             i += 1 
     else: 
         while tamanho != 0:
-            lista_final.append([linha,0]) 
+            posicao.append([linha,0]) 
             tamanho -= 1
         i = 0
-        while i < len(lista_final):
-            lista_final[i][1] = coluna
+        while i < len(posicao):
+            posicao[i][1] = coluna
             coluna += 1
             i += 1 
-    return (lista_final)
+    return (posicao)
+#exercicio 2
+def preenche_frota(frota,nome_navio,linha,coluna,orientacao,tamanho):
+    posicao_navio = define_posicoes(linha,coluna,orientacao,tamanho)
+    if nome_navio in frota.keys():
+        frota[nome_navio].append(posicao_navio)
+    else: 
+        frota[nome_navio] = [posicao_navio]
+    return frota    
