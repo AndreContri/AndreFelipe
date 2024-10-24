@@ -10,7 +10,7 @@ def define_posicoes(linha,coluna,orientacao,tamanho):
             posicao[i][0] = linha
             linha += 1
             i += 1 
-    else: 
+    else:  
         while tamanho != 0:
             posicao.append([linha,0]) 
             tamanho -= 1
@@ -28,3 +28,15 @@ def preenche_frota(frota,nome_navio,linha,coluna,orientacao,tamanho):
     else: 
         frota[nome_navio] = [posicao_navio]
     return frota    
+# exercicio 3
+def faz_jogada(tabuleiro,linha,coluna):
+    chute = tabuleiro[linha][coluna]
+    if chute == 1:
+       tabuleiro[linha][coluna] = 'X'
+    if chute == 0:
+         tabuleiro[linha][coluna] = '-'
+    return tabuleiro
+
+
+
+
