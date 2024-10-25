@@ -36,6 +36,29 @@ def faz_jogada(tabuleiro,linha,coluna):
     if chute == 0:
          tabuleiro[linha][coluna] = '-'
     return tabuleiro
+# exercicio 4
+def posiciona_frota(frota):
+    tabuleiro = [
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+]       
+    for coordenadas in frota.values():
+        for coordenada in coordenadas:
+            i = 0
+            while i < len(coordenada):
+                tabuleiro[coordenada[i][0]][coordenada[i][1]] = 1
+                i +=1
+    return (tabuleiro)
+
+
 
 
 
