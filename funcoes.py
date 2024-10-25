@@ -57,6 +57,22 @@ def posiciona_frota(frota):
                 tabuleiro[coordenada[i][0]][coordenada[i][1]] = 1
                 i +=1
     return (tabuleiro)
+#exercicio5
+def afundados(frota,tabuleiro):
+    navios_afundados = 0 
+    for posicoes_navio in frota.values():
+        for posicao in posicoes_navio:
+            certos = 0 
+            i = 0
+            while i < len(posicao):
+                if tabuleiro[posicao[i][0]][posicao[i][1]] == 'X':
+                    certos +=1 
+                i += 1 
+            if certos == len(posicao):
+                navios_afundados += 1 
+    return (navios_afundados)
+
+
 
 
 
