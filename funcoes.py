@@ -71,6 +71,28 @@ def afundados(frota,tabuleiro):
             if certos == len(posicao):
                 navios_afundados += 1 
     return (navios_afundados)
+#exercicio6
+def posicao_valida(frota,linha,coluna,orientacao,tamanho):
+    if orientacao == 'horizontal':
+        if coluna + tamanho > 10:
+            return False
+    elif orientacao == 'vertical':
+        if linha + tamanho > 10:
+            return False 
+    nome = define_posicoes(linha,coluna,orientacao,tamanho)
+    for posicoes in frota.values():
+        for coordenadas in posicoes:
+                for i in range(len(coordenadas)):
+                    for k in range(len(nome)):  
+                        if coordenadas[i] == nome[k]:
+                            return False 
+    return True
+
+               
+               
+        
+                    
+
 
 
 
