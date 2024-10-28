@@ -71,7 +71,7 @@ def afundados(frota,tabuleiro):
             if certos == len(posicao):
                 navios_afundados += 1 
     return (navios_afundados)
-#exercicio6
+
 def posicao_valida(frota,linha,coluna,orientacao,tamanho):
     if orientacao == 'horizontal':
         if coluna + tamanho > 10:
